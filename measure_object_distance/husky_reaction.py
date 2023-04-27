@@ -81,7 +81,7 @@ def main():
                     if centers[0][0] <= 160:
                             print("Object Detected Left") 
                             readings.linear.x = 0
-                            readings.angular.z = 0.4
+                            readings.angular.z = 0.2
                             pub.publish(readings)
                             print(" ")
                     if (centers[0][0] > 160 and centers[0][0] < 480):
@@ -93,7 +93,7 @@ def main():
                     if centers[0][0] >= 480:
                             print("Object Detected Right")
                             readings.linear.x = 0
-                            readings.angular.z = -0.4
+                            readings.angular.z = -0.2
                             pub.publish(readings)
                             print(" ")
                     else:
