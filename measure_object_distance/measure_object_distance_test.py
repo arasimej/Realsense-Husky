@@ -97,7 +97,7 @@ while True:
     cv2.imshow("depth frame", depth_frame)
     cv2.imshow("Bgr frame", bgr_frame)
 
-    # HUSKY REACTION MOVEMENT
+    # HUSKY REACTION MOVEMENT.
     for class_id in mrcnn.obj_classes:
         if centers is not None:     
                 if mrcnn.classes[int(class_id)] == "bottle":
