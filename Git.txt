@@ -1,10 +1,26 @@
 git clone http....
+-Use this to get the file
 
 git status 
+-Use this to check for Github vs Local differences
 
 git add
 git add -A
+-Use this to get the files onto the cue for being added to the commit
 
 git commit -m "message..."
+-Use this to set the commit
 
 git push
+-Use this to send the commit to the Github
+
+git fetch
+-Use this to get files/updated files from Github to Local
+
+
+FOR UPLOADING:
+0. git status 
+1. git add -A (-A for all changes)
+3. git fetch (if there are different files)
+3. git commit -m "message..."
+4. git push
