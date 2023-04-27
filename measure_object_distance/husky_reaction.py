@@ -74,33 +74,34 @@ def main():
         cv2.imshow("depth frame", depth_frame)
         cv2.imshow("Bgr frame", bgr_frame)
 
-        # HUSKY REACTION
-        if centers is not None:     
-            if mrcnn.classes[int(class_id)] == "bottle":
-                if centers[0][0] <= 160:
-                        print("Object Detected Left") 
-                        readings.linear.x = 0
-                        readings.angular.z = 0.4
-                        pub.publish(readings)
-                        print(" ")
-                if (centers[0][0] > 160 and centers[0][0] < 480):
-                        print("Object Detected Center")
-                        readings.linear.x = 0.2
-                        readings.angular.z = 0
-                        pub.publish(readings)
-                        print(" ")
-                if centers[0][0] >= 480:
-                        print("Object Detected Right")
-                        readings.linear.x = 0
-                        readings.angular.z = -0.4
-                        pub.publish(readings)
-                        print(" ")
-                else:
-                        print("No Bottle Seen")
-                        readings.linear.x = 0
-                        readings.angular.z = 0
-                        pub.publish(readings)
-                        print(" ")
+        # HUSKY REACTION MOVEMENT
+        for class_id in mrcnn.obj_classes:
+            if centers is not None:     
+                if mrcnn.classes[int(class_id)] == "bottle":
+                    if centers[0][0] <= 160:
+                            print("Object Detected Left") 
+                            readings.linear.x = 0
+                            readings.angular.z = 0.4
+                            pub.publish(readings)
+                            print(" ")
+                    if (centers[0][0] > 160 and centers[0][0] < 480):
+                            print("Object Detected Center")
+                            readings.linear.x = 0.2
+                            readings.angular.z = 0
+                            pub.publish(readings)
+                            print(" ")
+                    if centers[0][0] >= 480:
+                            print("Object Detected Right")
+                            readings.linear.x = 0
+                            readings.angular.z = -0.4
+                            pub.publish(readings)
+                            print(" ")
+                    else:
+                            print("No Bottle Seen")
+                            readings.linear.x = 0
+                            readings.angular.z = 0
+                            pub.publish(readings)
+                            print(" ")
 
         print(" ")
 
