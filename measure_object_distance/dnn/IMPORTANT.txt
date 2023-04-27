@@ -1,0 +1,1 @@
+This folder is missing the necessary files frozen_inference_graph_coco.pb and mask_rcnn_inception_v2_coco_2018_01_28.pbtxt. Both mask files were too big to be uploaded to Github, even as a .zip. Both files can be found through the Pysource tutorial https://www.youtube.com/watch?v=_gzcp8dURbU  and Pysource website listed in that video's description.  
